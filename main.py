@@ -16,7 +16,7 @@ def calcular(entrada):
     #Borramos espacios
     entrada = entrada.replace(" ","")
     
-    if entrada.lower("c"):
+    if entrada.lower('c'):
         return "Operación borrada"
     
 
