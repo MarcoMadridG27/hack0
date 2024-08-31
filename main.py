@@ -4,7 +4,6 @@ def sumar(a,b):
 def restar(a, b):
     return a - b
 
-
 def multiplicar(a, b):
     return a * b
 
@@ -15,7 +14,9 @@ def calcular(entrada):
     if entrada.lower("c"):
         return "Operación borrada"
     
+
     for operador in ["+","-","*"]:
+
         if operador in entrada:
             #Separamos las partes del string
             partes = entrada.split(operador) 
