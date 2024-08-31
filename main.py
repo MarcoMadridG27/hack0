@@ -7,6 +7,11 @@ def restar(a, b):
 def multiplicar(a, b):
     return a * b
 
+def dividir(a, b):
+    if b == 0:
+        return "Error: División por cero."
+    return a / b
+
 def calcular(entrada):
     #Borramos espacios
     entrada = entrada.replace(" ","")
@@ -15,7 +20,7 @@ def calcular(entrada):
         return "Operación borrada"
     
 
-    for operador in ["+","-","*"]:
+    for operador in ["+","-","*","/"]:
 
         if operador in entrada:
             #Separamos las partes del string
@@ -33,6 +38,8 @@ def calcular(entrada):
                     return restar(a, b)
                 elif operador == '*':
                     return multiplicar(a, b)
+                elif operador == '/':
+                    return dividir(a, b)
                 
 while True:
     entrada = input("Ingrese una operación (o 'c' para borrar): ")
