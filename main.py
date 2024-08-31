@@ -1,6 +1,8 @@
 def sumar(a,b):
     return a + b
-    
+
+def restar(a, b):
+    return a - b
 
 def calcular(entrada):
     #Borramos espacios
@@ -9,7 +11,7 @@ def calcular(entrada):
     if entrada.lower("c"):
         return "Operación borrada"
     
-    for operador in ["+"]:
+    for operador in ["+","-"]:
         if operador in entrada:
             #Separamos las partes del string
             partes = entrada.split(operador) 
@@ -22,6 +24,8 @@ def calcular(entrada):
                 #Suma
                 if operador == '+':
                     return sumar(a, b)
+                elif operador == '-':
+                    return restar(a, b)
                 
 while True:
     entrada = input("Ingrese una operación (o 'c' para borrar): ")
