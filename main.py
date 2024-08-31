@@ -1,4 +1,4 @@
-def sumar(a,b):
+def sumar(a, b):
     return a + b
 
 def restar(a, b):
@@ -13,17 +13,15 @@ def dividir(a, b):
     return a / b
 
 def calcular(entrada):
-    #Borramos espacios
-    entrada = entrada.replace(" ","")
+    # Borramos espacios
+    entrada = entrada.replace(" ", "")
     
-    if entrada.lower("c"):
+    if entrada.lower() == "c":
         return "Operación borrada"
     
-
-    for operador in ["+","-","*","/"]:
-
+    for operador in ["+", "-", "*", "/"]:
         if operador in entrada:
-            #Separamos las partes del string
+            # Separamos las partes del string
             partes = entrada.split(operador) 
             if len(partes) == 2:
                 try:
@@ -31,7 +29,7 @@ def calcular(entrada):
                     b = float(partes[1])    
                 except ValueError:
                     return "Error: Entrada inválida."
-                #Suma
+                
                 if operador == '+':
                     return sumar(a, b)
                 elif operador == '-':
@@ -40,8 +38,17 @@ def calcular(entrada):
                     return multiplicar(a, b)
                 elif operador == '/':
                     return dividir(a, b)
-                
-while True:
-    entrada = input("Ingrese una operación (o 'c' para borrar): ")
-    resultado = calcular(entrada)
-    print(f"Resultado: {resultado}")
+    
+    return "Error: Operación no reconocida."
+
+def main():
+    while True:
+        entrada = input("Ingrese una operación (o 'c' para borrar, 'q' para salir): ")
+        if entrada.lower() == 'q':
+            print("¡Gracias por usar la calculadora!")
+            break
+        resultado = calcular(entrada)
+        print(f"Resultado: {resultado}")
+
+if __name__ == "__main__":
+    main()
